@@ -1,4 +1,5 @@
 import { useContext, createContext, useState, useEffect } from 'react'
+import { useOptions, TABS } from '../Contexts/OptionsContext'
 import axios from 'axios'
 
 const APIDataContext = createContext()
@@ -8,11 +9,11 @@ export const useAPIData = () => {
 }
 
 export const APIDataProvider = ({ children }) => {
+    const { selectedTab } = useOptions()
     const [maxPages, setMaxPages] = useState()
     const [characters, setCharacters] = useState([])
     const [locations, setLocations] = useState([])
     const [episodes, setEpisodes] = useState([])
-    const [currentSection, setCurrentSection] = useState(1)
     const [loadingData, setLoadingData] = useState(true)
     const [dataError, setDataError] = useState(false)
 
@@ -58,14 +59,14 @@ export const APIDataProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        if (currentSection === 1) return getMaxPages('character')
-        if (currentSection === 2) return getMaxPages('location')
+        if (selectedTab === TABS.TAB_1) return getMaxPages('character')
+        if (selectedTab === TABS.TAB_2) return getMaxPages('location')
         getMaxPages('episode')
-    }, [currentSection])
+    }, [selectedTab])
 
     useEffect(() => {
-        if (currentSection === 1) return getCharacters()
-        if (currentSection === 2) return getLocations()
+        if (selectedTab === TABS.TAB_1) return getCharacters()
+        if (selectedTab === TABS.TAB_2) return getLocations()
         getEpisodes()
     }, [maxPages])
 

@@ -5,14 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { APIDataProvider } from './Contexts/APIDataContext';
 import { CredentialsProvider } from './Contexts/CredentialsContext'
+import { OptionsProvider } from './Contexts/OptionsContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <CredentialsProvider>
-      <APIDataProvider>
-        <App />
-      </APIDataProvider>
+      <OptionsProvider>
+        <APIDataProvider>
+          <App />
+        </APIDataProvider>
+      </OptionsProvider>
     </CredentialsProvider>
   </React.StrictMode>
 );

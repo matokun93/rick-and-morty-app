@@ -1,8 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Roboto', sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +26,79 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Lights colors */
+:root {
+  --clr-background-primary: #fcfcfc;
+  --clr-background-secondary: #fff;
+  --clr-background-hovered: #eaeaea;
+  --clr-background-gradient-primary: #ececec;
+  --clr-background-gradient-secondary: #fff;
+  --clr-background-button-primary: #6060600f;
+  --clr-background-button-hover: #6060601e;
+  --clr-border-primary: #979797cc;
+  --clr-border-secondary: #d6d6d6;
+  --clr-border-third: #2e2e2e;
+  --clr-border-active: #1797ff;
+  --clr-font-primary: #6b6b6b;
+  --clr-font-secondary: #767676;
+  --clr-font-third: #606060;
+  --clr-font-fourth: #606060;
+  --clr-font-active: #1797ff;
+  --clr-shadows: #dad8d8;
+  --clr-slider: #3e3e3e;
+  --clr-scroll-button: #ffffff;
+  --clr-scroll-button-hover: #f9f9f9;
+  --clr-heart-icon: #e01d1d;
+}
+
+/* Dark colors */
+.dark {
+  --clr-background-primary: rgb(50, 50, 50);
+  --clr-background-secondary: rgb(58, 58, 58);
+  --clr-background-hovered: #eaeaea;
+  --clr-background-gradient-primary: #3c3c3c;
+  --clr-background-gradient-secondary: rgb(56, 56, 56);
+  --clr-background-button-primary: #7a7a7a41;
+  --clr-background-button-hover: #7e7e7ed9;
+  --clr-border-primary: #484848cc;
+  --clr-border-secondary: #b6b6b63b;
+  --clr-border-third: #696969;
+  --clr-border-active: #d6d6d6;
+  --clr-font-primary: #acacac;
+  --clr-font-secondary: #8d8d8d;
+  --clr-font-third: #d6d6d63f;
+  --clr-font-fourth: #a7a7a7;
+  --clr-font-active: #c9c9c9;
+  --clr-shadows: #292929;
+  --clr-slider: #bbbbbb;
+  --clr-scroll-button: #3f3f3f;
+  --clr-scroll-button-hover: #606060;
+  --clr-heart-icon: #cacaca;
+}
+
+/* Animations */
+@keyframes appear {
+  from {
+    opacity: 0;
+    display: none;
+  }
+
+  to {
+    opacity: 1;
+    display: flex;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+    display: flex;
+  }
+
+  to {
+    opacity: 0;
+    display: none;
+  }
 }
