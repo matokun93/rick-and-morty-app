@@ -25,7 +25,7 @@
     width: clamp(120px, 20vw, 208px);
 }
 
-span.right-buttons {
+.right-buttons {
     display: flex;
     gap: 1rem;
 }

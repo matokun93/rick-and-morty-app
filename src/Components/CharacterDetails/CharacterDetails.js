@@ -7,7 +7,7 @@ const CharacterDetails = () => {
 
     return (
         <div className='card-detail'>
-            <img src={data.image ?? 'https://rickandmortyapi.com/api/character/avatar/66.jpeg'} alt="card-image" />
+            <img src={data.image ?? 'https://rickandmortyapi.com/api/character/avatar/66.jpeg'} alt="character-avatar" />
             <h1>{data.name}</h1>
             <h3>{data.species !== 'unknown' ? data.species : 'Species Unknown'} - {data.status !== 'unknown' ? data.status : 'Status Unknown'}</h3>
             <p>Gender: {data.gender}</p>

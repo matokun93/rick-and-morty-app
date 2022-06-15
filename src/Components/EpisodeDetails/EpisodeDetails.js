@@ -7,7 +7,7 @@ const LocationDetails = () => {
 
     return (
         <div className='card-detail'>
-            <img src={data.image ?? 'https://rickandmortyapi.com/api/character/avatar/66.jpeg'} alt="card-image" />
+            <img src={data.image ?? 'https://rickandmortyapi.com/api/character/avatar/66.jpeg'} alt="episode-avatar" />
             <h1>{data.name}</h1>
             <h3>{data.episode}</h3>
             <p>Aired at: {data.air_date}</p>

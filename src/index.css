@@ -13,6 +13,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;

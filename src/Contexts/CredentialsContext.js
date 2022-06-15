@@ -38,6 +38,7 @@ export const CredentialsProvider = ({ children }) => {
             email: email,
             password: password
         }).then(res => {
+            setUserLogged(true)
             console.log(res);
         }).catch(e => {
             console.log(e);

@@ -1,20 +1,27 @@
 import useDarkMode from '../../CustomHooks/useDarkMode'
+import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon } from '@fortawesome/free-solid-svg-icons'
+import { faMoon, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { useCredentials } from '../../Contexts/CredentialsContext'
 
 const Navbar = () => {
     const [darkMode, setDarkMode] = useDarkMode()
+    const { logout, userLogged } = useCredentials()
 
     const changeTheme = () => {
         setDarkMode(darkMode => !darkMode)
+    }
+
+    const handleLogoutButton = () => {
+        logout()
     }
 
     return (
         <div className="nav-container">
             <nav>
                 <div className="logo">Rick&MortyApp</div>
-                <span className='right-buttons'>
+                <div className="right-buttons">
                     <div className="theme-button">
                         <span className='moon-icon'>
                             <FontAwesomeIcon icon={faMoon} />
@@ -23,11 +30,14 @@ const Navbar = () => {
                             <div className={darkMode === false ? 'slider' : 'slider slider-right'}></div>
                         </div>
                     </div>
-                    <div className="log-buttons">
-                        <button>login</button>
-                        <button>register</button>
-                    </div>
-                </span>
+                    {userLogged &&
+                        <NavLink to='/'>
+                            <button onClick={() => handleLogoutButton()}>
+                                <span>Salir</span> <FontAwesomeIcon icon={faRightFromBracket} />
+                            </button>
+                        </NavLink>
+                    }
+                </div>
             </nav>
         </div>
     )
