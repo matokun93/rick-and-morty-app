@@ -1,4 +1,4 @@
-import { Formik } from "formik"
+import { Formik, Form } from "formik"
 import TextInput from '../TextInput/TextInput'
 
 const LogModal = () => {
@@ -11,6 +11,10 @@ const LogModal = () => {
             errors.email = 'El nombre es muy corto'
         }
         return errors
+    }
+
+    const enter = (a, b) => {
+        console.log('jol');
     }
 
     return (
@@ -27,3 +31,5 @@ const LogModal = () => {
         </Formik>
     )
 }
+
+export default LogModal 

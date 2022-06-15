@@ -1,0 +1,74 @@
+.card {
+    width: 100%;
+    min-height: 90px;
+    border-radius: 6px;
+    border: 1px solid var(--clr-border-primary);
+    background-color: var(--clr-background-secondary);
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    animation-duration: .5s;
+    animation-name: appear;
+}
+
+.faded {
+    pointer-events: none;
+    animation-duration: .2s;
+    animation-name: disappear;
+    animation-fill-mode: forwards;
+}
+
+.card:hover {
+    opacity: .6;
+}
+
+.card a {
+    width: 100%;
+}
+
+.card .body {
+    height: 100%;
+    width: 100%;
+    padding: 2px 10px 2px 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card h1 {
+    font-size: clamp(11px, 1.4vw, 14px);
+    font-weight: 500;
+    color: var(--clr-font-primary);
+}
+
+.card p {
+    font-size: clamp(10px, 1.2vw, 11px);
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    color: var(--clr-font-secondary);
+}
+
+.card p .time-icon {
+    font-size: clamp(11px, 1.5vw, 15px);
+    color: var(--clr-font-secondary);
+}
+
+.card button {
+    min-height: max(90px, 100%);
+    min-width: min(68px, 15%);
+    border: none;
+    background-color: var(--clr-background-button-primary);
+    cursor: pointer;
+}
+
+.card button .heart-icon {
+    font-size: clamp(17px, 1.5vw, 24px);
+    color: var(--clr-heart-icon);
+}
+
+.card button:hover {
+    background-color: var(--clr-background-button-hover);
+}
