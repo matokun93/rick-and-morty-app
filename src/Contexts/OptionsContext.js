@@ -14,10 +14,11 @@ export const TABS = {
 
 export const OptionsProvider = ({ children }) => {
     const [selectedTab, setSelectedTab] = useState(TABS.TAB_1)
-    const [searchbarQuery, setSearchbarQuery] = useState()
+    const [searchbarQuery, setSearchbarQuery] = useState('')
 
     const changeTab = (tab) => {
         setSelectedTab(tab)
+        setSearchbarQuery('')
     }
 
     const changeSearchbarQuery = (e) => {
