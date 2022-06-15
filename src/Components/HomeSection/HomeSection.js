@@ -3,7 +3,6 @@ import { useAPIData } from '../../Contexts/APIDataContext'
 import HomeLayout from './HomeLayout/HomeLayout'
 import Tabs from '../Tabs/Tabs'
 import Searchbar from '../Searchbar/Searchbar'
-import ScrollUpButton from '../ScrollUpButton/ScrollUpButton'
 
 const HomeSection = () => {
     const { selectedTab } = useOptions()
@@ -18,7 +17,6 @@ const HomeSection = () => {
                 {selectedTab === TABS.TAB_2 && <HomeLayout data={locations} />}
                 {selectedTab === TABS.TAB_3 && <HomeLayout data={episodes} />}
             </div>
-            <ScrollUpButton />
         </div>
     )
 }
