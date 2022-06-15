@@ -3,9 +3,10 @@ import { useAPIData } from './Contexts/APIDataContext'
 import { useCredentials } from './Contexts/CredentialsContext'
 import { Formik, Form, } from 'formik'
 import TextInput from './Components/TextInput/TextInput'
-import { useEffect } from 'react';
+import { useState } from 'react';
 
 function App() {
+  const [searchbarQuery, setSearchbarQuery] = useState()
   const { userLogged, login, logout, register, loadingCredentials, credentialsError } = useCredentials()
   const {
     getCharacters,
@@ -41,8 +42,13 @@ function App() {
     return errors
   }
 
+  const handleSearchbar = (e) => {
+    setSearchbarQuery(e.target.value)
+  }
+
   return (
     <div className="App">
+      <input type="text" onChange={handleSearchbar} />
       {loadingData ? <h2>loadiiiiiing</h2> : null}
       {
         credentialsError
@@ -70,11 +76,19 @@ function App() {
       <button onClick={() => imprimir()}>imprimre</button>
       <br />
       <h2>{maxPages}</h2>
-      {/* {
-        characters.map(character =>
-          <h3 key={character.id}>{character.name}</h3>
-        )
-      } */}
+      {
+        searchbarQuery
+          ? characters.map(character => {
+            if (character.name.toLowerCase().includes(searchbarQuery.toLowerCase())) {
+              return <h3 key={character.id}>{character.name}</h3>
+            } else {
+              return null
+            }
+          })
+          : characters.map(character => {
+            return <h3 key={character.id}>{character.name}</h3>
+          })
+      }
     </div>
   );
 }
