@@ -1,43 +1,25 @@
 import { useOptions, TABS } from '../../Contexts/OptionsContext'
 import { useAPIData } from '../../Contexts/APIDataContext'
 import HomeLayout from './HomeLayout/HomeLayout'
+import Tabs from '../Tabs/Tabs'
+import Searchbar from '../Searchbar/Searchbar'
+import ScrollUpButton from '../ScrollUpButton/ScrollUpButton'
 
 const HomeSection = () => {
     const { selectedTab } = useOptions()
     const { characters, locations, episodes } = useAPIData()
 
     return (
-        <div className="layout-container">
-            {selectedTab === TABS.TAB_1 && <HomeLayout data={characters} />}
-            {selectedTab === TABS.TAB_2 && <HomeLayout data={locations} />}
-            {selectedTab === TABS.TAB_3 && <HomeLayout data={episodes} />}
+        <div className="home-section">
+            <Tabs />
+            <Searchbar />
+            <div className="layout-container">
+                {selectedTab === TABS.TAB_1 && <HomeLayout data={characters} />}
+                {selectedTab === TABS.TAB_2 && <HomeLayout data={locations} />}
+                {selectedTab === TABS.TAB_3 && <HomeLayout data={episodes} />}
+            </div>
+            <ScrollUpButton />
         </div>
-
-        // <div className="layout-container">
-        //     {
-        //         searchbarQuery
-        //             ? <div className="layout">
-        //                 {
-        //                     characters.map(character =>
-        //                         character.name.toLowerCase().includes(searchbarQuery.toLowerCase())
-        //                             ? <div key={character.id} >
-        //                                 <h3>{character.name}</h3>
-        //                             </div>
-        //                             : null
-        //                     )
-        //                 }
-        //             </div>
-        //             : <div className="layout">
-        //                 {
-        //                     characters.map(character =>
-        //                         <div key={character.id} >
-        //                             <h3>{character.name}</h3>
-        //                         </div>
-        //                     )
-        //                 }
-        //             </div>
-        //     }
-        // </div>
     )
 }
 

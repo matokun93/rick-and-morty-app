@@ -2,7 +2,6 @@ import useDarkMode from '../../CustomHooks/useDarkMode'
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon } from '@fortawesome/free-solid-svg-icons'
-import Searchbar from '../Searchbar/Searchbar'
 
 const Navbar = () => {
     const [darkMode, setDarkMode] = useDarkMode()
@@ -15,7 +14,6 @@ const Navbar = () => {
         <div className="nav-container">
             <nav>
                 <div className="logo">Rick&MortyApp</div>
-                <Searchbar />
                 <span className='right-buttons'>
                     <div className="theme-button">
                         <span className='moon-icon'>

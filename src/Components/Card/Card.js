@@ -1,27 +1,21 @@
+import { NavLink } from 'react-router-dom'
+import { useOptions } from '../../Contexts/OptionsContext'
 import './Card.css'
 
-const Card = () => {
+const Card = ({ data }) => {
+    const { selectedTab } = useOptions()
 
     return (
-        <div className='card'>
-            <h3>chao</h3>
-            {/* <a href={post.url} target='_blank' rel="noreferrer">
+        <NavLink to={`/${selectedTab}/Details/${data.id}`} state={{ data: data }} >
+            <div className='card'>
+                <img src={data.image ?? 'https://rickandmortyapi.com/api/character/avatar/66.jpeg'} alt="card-image" />
                 <div className="body">
-                    <p>
-                        <span className="time-icon">
-                            <FontAwesomeIcon icon={faClockFour} />
-                        </span>
-                        {timePassed.time} {timePassed.unit} ago by {post.author}
-                    </p>
-                    <h1>{post.story_title}</h1>
+                    <h1>{data.name}</h1>
+                    {data.status && <p>Status: {data.status} <span>circle</span></p>}
+                    {data.origin && <p>Origin: {data.origin.name}</p>}
                 </div>
-            </a>
-            <button onClick={() => handleLikeButton()}>
-                <span className='heart-icon'>
-                    <FontAwesomeIcon icon={post.liked ? faHeart : faHeartRegular} />
-                </span>
-            </button> */}
-        </div>
+            </div>
+        </NavLink>
     )
 }
 
