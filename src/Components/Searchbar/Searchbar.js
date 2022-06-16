@@ -4,9 +4,19 @@ import './Searchbar.css'
 const Searchbar = () => {
     const { selectedTab, changeSearchbarQuery } = useOptions()
 
-    const handleSearchbar = (e) => {
-        changeSearchbarQuery(e)
+    const debounce = (cb, delay = 250) => {
+        let timeout
+        return (...args) => {
+            clearTimeout(timeout)
+            timeout = setTimeout(() => {
+                cb(...args)
+            }, delay);
+        }
     }
+
+    const handleSearchbar = debounce(e => {
+        changeSearchbarQuery(e)
+    })
 
     return (
         <div className="searchbar">

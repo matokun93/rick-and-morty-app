@@ -19,7 +19,7 @@
     color: var(--clr-font-primary);
 }
 
-.text-input .imput-error {
+.text-input .input-error {
     font-size: clamp(9px, 2.5vw, 12px);
 }
 
