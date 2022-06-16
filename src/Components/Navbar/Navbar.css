@@ -1,7 +1,7 @@
 .nav-container {
     margin-bottom: clamp(30px, 5vw, 70px);
-    padding-top: clamp(12px, 3vw, 44px);
-    padding-bottom: clamp(12px, 3vw, 44px);
+    padding-top: clamp(16px, 3vw, 20px);
+    padding-bottom: clamp(16px, 3vw, 20px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,13 +21,24 @@
     animation-fill-mode: forwards;
 }
 
-.nav-container img {
-    width: clamp(120px, 20vw, 208px);
+.nav-container .logo {
+    font-size: clamp(14px, 2.5vw, 25px);
+    color: var(--clr-font-primary);
+    display: flex;
+    flex-wrap: no-wrap;
 }
 
 .right-buttons {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: clamp(10px, 1.5vw, 25px);
+}
+
+.right-buttons button {
+    background-color: transparent;
+    border: none;
+    color: var(--clr-slider);
+    font-size: clamp(12px, 1.8vw, 18px);
 }
 
 .theme-button {
@@ -70,6 +81,8 @@
     transform: translateX(20px);
 }
 
+
+
 @media (max-width: 1000px) {
     .slider-container {
         width: 34px;
@@ -91,8 +104,8 @@
 
 @media (max-width: 780px) {
     .nav-container nav {
-        width: min(500px, 98%);
-        max-width: 100%;
+        width: 100%;
+        max-width: 80%;
     }
 
     .slider-container {
@@ -110,5 +123,12 @@
 
     .theme-button .slider-right {
         transform: translateX(14px);
+    }
+}
+
+@media (max-width: 651px) {
+    .nav-container nav {
+        width: min(500px, 95%);
+        max-width: 100%;
     }
 }

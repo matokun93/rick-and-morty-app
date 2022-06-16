@@ -20,7 +20,9 @@ const Navbar = () => {
     return (
         <div className="nav-container">
             <nav>
-                <div className="logo">Rick&MortyApp</div>
+                <NavLink to='/'>
+                    <div className='logo'>Rick & Morty </div>
+                </NavLink>
                 <div className="right-buttons">
                     <div className="theme-button">
                         <span className='moon-icon'>

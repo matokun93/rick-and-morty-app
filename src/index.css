@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +21,7 @@ button {
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
@@ -54,7 +56,6 @@ code {
   --clr-slider: #3e3e3e;
   --clr-scroll-button: #ffffff;
   --clr-scroll-button-hover: #f9f9f9;
-  --clr-heart-icon: #e01d1d;
 }
 
 /* Dark colors */
@@ -79,7 +80,6 @@ code {
   --clr-slider: #bbbbbb;
   --clr-scroll-button: #3f3f3f;
   --clr-scroll-button-hover: #606060;
-  --clr-heart-icon: #cacaca;
 }
 
 /* Animations */

@@ -1,16 +1,21 @@
-import { useOptions } from "../../Contexts/OptionsContext"
+import { useOptions, TABS } from "../../Contexts/OptionsContext"
+import './Searchbar.css'
 
 const Searchbar = () => {
-    const { selectedTab, searchbarQuery, changeSearchbarQuery } = useOptions()
+    const { selectedTab, changeSearchbarQuery } = useOptions()
 
     const handleSearchbar = (e) => {
         changeSearchbarQuery(e)
     }
 
     return (
-        <>
-            <input type="text" onChange={handleSearchbar} />
-        </>
+        <div className="searchbar">
+            <input type="text" onChange={handleSearchbar} placeholder={
+                selectedTab === TABS.TAB_1 ? 'Search characters  ...'
+                    : selectedTab === TABS.TAB_2 ? 'Search locations  ...'
+                        : 'Search episodes  ...'
+            } />
+        </div>
     )
 }
 

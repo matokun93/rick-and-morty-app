@@ -1,0 +1,32 @@
+.searchbar {
+    margin-top: clamp(30px, 6vw, 4rem);
+    display: flex;
+    align-items: center;
+}
+
+.searchbar input {
+    width: clamp(250px, 30vw, 450px);
+    outline: none;
+    padding: 15px 30px;
+    font-size: clamp(11px, 1.6vw, 16px);
+    border-radius: 4px;
+    border: 1px solid var(--clr-border-primary);
+    background-color: var(--clr-background-secondary);
+    color: var(--clr-font-primary);
+}
+
+@media (max-width: 650px) {
+    .searchbar {
+        justify-content: center;
+    }
+
+    .searchbar input {
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .searchbar input {
+        padding: 10px 25px;
+    }
+}

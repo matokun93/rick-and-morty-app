@@ -1,0 +1,39 @@
+.layout-container {
+    width: 100%;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: clamp(15px, 6vw, 1rem);
+    position: relative;
+}
+
+.layout {
+    margin-top: clamp(30px, 5vw, 3.5rem);
+    width: 100%;
+    display: grid;
+    gap: 30px;
+    column-gap: min(40px, 3%);
+    align-content: center;
+    align-self: center;
+}
+
+
+@media (min-width: 651px) {
+    .layout {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1500px) {
+    .layout {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .layout-container {
+        width: min(350px, 98%);
+        max-width: 100%;
+    }
+}

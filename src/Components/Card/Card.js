@@ -11,8 +11,14 @@ const Card = ({ data }) => {
                 <img src={data.image ?? 'https://rickandmortyapi.com/api/character/avatar/66.jpeg'} alt="card-image" />
                 <div className="body">
                     <h1>{data.name}</h1>
-                    {data.status && <p>Status: {data.status} <span>circle</span></p>}
-                    {data.origin && <p>Origin: {data.origin.name}</p>}
+                    <p>
+                        Status: {data.status}
+                        <span data-status={data.status}></span>
+                    </p>
+                    {data.origin &&
+                        <p>
+                            Origin: {data.origin.name}
+                        </p>}
                 </div>
             </div>
         </NavLink>

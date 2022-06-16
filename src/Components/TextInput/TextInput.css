@@ -1,0 +1,40 @@
+.text-input {
+    margin-bottom: clamp(11px, 3vw, 1.5rem);
+}
+
+.text-input label {
+    font-size: clamp(11px, 3vw, 16px);
+}
+
+.text-input input {
+    margin-top: clamp(6px, 1.2vw, 8px);
+    margin-bottom: clamp(6px, 1.2vw, 8px);
+    width: 100%;
+    outline: none;
+    padding: 10px 30px;
+    font-size: clamp(11px, 3vw, 16px);
+    border-radius: 4px;
+    border: 2px solid var(--clr-border-primary);
+    background-color: var(--clr-background-secondary);
+    color: var(--clr-font-primary);
+}
+
+.text-input .error {
+    font-size: clamp(9px, 2.5vw, 12px);
+}
+
+@media (max-width: 650px) {
+    .text-input {
+        justify-content: center;
+    }
+
+    .text-input input {
+        padding: 6px 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .text-input input {
+        padding: 8px 25px;
+    }
+}

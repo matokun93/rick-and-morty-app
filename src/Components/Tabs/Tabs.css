@@ -10,7 +10,7 @@
 }
 
 .tabs div {
-    width: clamp(80px, 12vw, 98px);
+    width: clamp(100px, 12vw, 150px);
     font-size: clamp(12px, 1.4vw, 16px);
     padding: 7px 0;
     font-weight: 500;
