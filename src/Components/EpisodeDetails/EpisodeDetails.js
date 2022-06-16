@@ -1,10 +1,30 @@
+import { useCallback, useEffect, useState } from 'react'
+import { useAPIData } from '../../Contexts/APIDataContext'
 import { useLocation, useNavigate } from 'react-router-dom'
+import Card from '../Card/Card'
 import './EpisodeDetails.css'
 
 const EpisodeDetails = () => {
     const location = useLocation()
     const navigate = useNavigate()
     const { data } = location.state
+    const [filteredCharacters, setFilteredCharacters] = useState([])
+    const { characters } = useAPIData()
+
+    const filterCharacters = useCallback(() => {
+        setFilteredCharacters([])
+        data.characters.map(item => {
+            let characterFound = characters.find(character => character.url === item)
+            return setFilteredCharacters(prevFilteredCharacters => {
+                if (characterFound) return [...prevFilteredCharacters, characterFound]
+                return [...prevFilteredCharacters]
+            })
+        })
+    }, [characters, data.characters])
+
+    useEffect(() => {
+        filterCharacters()
+    }, [filterCharacters])
 
     return (
         <div className="episode-details-section">
@@ -23,6 +43,14 @@ const EpisodeDetails = () => {
             <button className='back-button' onClick={() => navigate(-1)}>
                 Volver
             </button>
+            <h1 className='character-list-title'>Characters</h1>
+            <div className="layout-container">
+                <div className="layout">
+                    {filteredCharacters.map(character =>
+                        <Card key={character.id} data={character} />
+                    )}
+                </div>
+            </div>
         </div>
     )
 }

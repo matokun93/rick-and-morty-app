@@ -8,7 +8,7 @@ const TextInput = ({ label, ...props }) => {
         <div className='text-input'>
             <label>{label}</label>
             <input {...field}{...props} />
-            {meta.touched && meta.error ? <div className='error'>{meta.error}</div> : null}
+            {meta.touched && meta.error ? <div className='input-error'>{meta.error}</div> : null}
         </div>
     )
 }

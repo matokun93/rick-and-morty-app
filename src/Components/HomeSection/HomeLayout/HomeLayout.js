@@ -6,7 +6,6 @@ import './HomeLayout.css'
 
 const HomeLayout = ({ data }) => {
     const { searchbarQuery } = useOptions()
-
     return (
         <div className="layout-container">
             <Tabs />

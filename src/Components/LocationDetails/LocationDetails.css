@@ -18,6 +18,17 @@
     color: var(--clr-font-secondary);
 }
 
+.location-details-section .layout-container {
+    pointer-events: none;
+}
+
+h1.character-list-title {
+    text-align: center;
+    color: var(--clr-font-primary);
+    font-size: clamp(20px, 4.5vw, 2rem);
+    margin-bottom: clamp(-50px, -1vw, -20px);
+}
+
 .location-details-container img {
     border-radius: 20px 0 0 20px;
     width: clamp(20px, 40vw, 300px);

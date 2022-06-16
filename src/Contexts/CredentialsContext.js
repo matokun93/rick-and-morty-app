@@ -10,7 +10,7 @@ export const useCredentials = () => {
 
 export const CredentialsProvider = ({ children }) => {
     const [userLogged, setUserLogged] = useLocalStorage('isLogged', false)
-    const [loadingCredentials, setLoadingCredentials] = useState(true)
+    const [loadingCredentials, setLoadingCredentials] = useState(false)
     const [credentialsError, setCredentialsError] = useState(false)
 
     const login = (email, password) => {
@@ -24,7 +24,6 @@ export const CredentialsProvider = ({ children }) => {
             setLoadingCredentials(false)
         }).catch(e => {
             setCredentialsError(e.response.data.error)
-            console.log(e);
             console.log(e.response.data.error);
         })
     }
@@ -34,14 +33,17 @@ export const CredentialsProvider = ({ children }) => {
     }
 
     const register = (email, password) => {
+        setLoadingCredentials(true)
+        setCredentialsError(false)
         axios.post('https://reqres.in/api/register', {
             email: email,
             password: password
         }).then(res => {
             setUserLogged(true)
-            console.log(res);
+            setLoadingCredentials(false)
         }).catch(e => {
-            console.log(e);
+            setCredentialsError(e.response.data.error)
+            console.log(e.response.data.error);
         })
     }
 

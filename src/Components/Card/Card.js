@@ -8,13 +8,14 @@ const Card = ({ data }) => {
     return (
         <NavLink to={`/${selectedTab}/Details/${data.id}`} state={{ data: data }} >
             <div className='card'>
-                <img src={data.image ?? 'https://rickandmortyapi.com/api/character/avatar/66.jpeg'} alt="card-image" />
+                <img src={data.image ?? 'https://rickandmortyapi.com/api/character/avatar/66.jpeg'} alt="card-avatar" />
                 <div className="body">
                     <h1>{data.name}</h1>
-                    <p>
-                        Status: {data.status}
-                        <span data-status={data.status}></span>
-                    </p>
+                    {data.status &&
+                        <p>
+                            Status: {data.status}
+                            <span data-status={data.status}></span>
+                        </p>}
                     {data.origin &&
                         <p>
                             Origin: {data.origin.name}

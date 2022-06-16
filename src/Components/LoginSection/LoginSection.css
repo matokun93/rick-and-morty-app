@@ -27,6 +27,7 @@
 
 .form-container h1 {
     font-size: clamp(25px, 6vw, 35px);
+    text-align: center;
 }
 
 .form-container p {

@@ -6,7 +6,7 @@ import './LoginSection.css'
 
 const LoginSection = () => {
     const [action, setAction] = useState('login')
-    const { login, register } = useCredentials()
+    const { login, register, loadingCredentials, credentialsError } = useCredentials()
 
     const validate = (values) => {
         const errors = {}
@@ -48,6 +48,8 @@ const LoginSection = () => {
                     : <p>You already have an account?  <button className="form-button" onClick={() => changeAction('login')}>Sign in</button></p>
                 }
             </div>
+            {loadingCredentials && <div className='loading'>Loading ...</div>}
+            {credentialsError && <div className='error'>Error when loading</div>}
         </div>
     )
 }

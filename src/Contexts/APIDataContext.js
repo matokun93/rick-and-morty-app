@@ -1,5 +1,4 @@
 import { useContext, createContext, useState, useEffect } from 'react'
-import { useOptions, TABS } from '../Contexts/OptionsContext'
 import axios from 'axios'
 
 const APIDataContext = createContext()
